@@ -17,7 +17,7 @@ var saveScript = function saveScript(){
     }else{
         logger.warn('No script folder');
     }
-}
+};
 
 saveScript();
 

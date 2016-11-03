@@ -5,13 +5,13 @@ var prepareOutput= function prepareOutput(folder) {
   
   for (c in children) {
     var node = children[c];
-    if(node.isDocument && node.mimetype='application/json'){
+    if(node.isDocument && node.mimetype == 'application/json'){
         scriptlist.push(node.content);        
     }
   }
   
   return scriptlist;
-}
+};
 
 var findAvailableSnippets= function findAvailableScripts(){
     var snippetsFolder = search.selectNodes("/app:company_home/app:dictionary/cm:jsconsole/cm:snippets")[0];
@@ -21,6 +21,6 @@ var findAvailableSnippets= function findAvailableScripts(){
     else {
     	model.scripts = "[]";
     }
-}
+};
 
 findAvailableScripts();
