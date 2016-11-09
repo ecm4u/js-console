@@ -95,6 +95,9 @@
 <@script type="text/javascript" src="${page.url.context}/res/fme/components/jsconsole/codemirror/addon/tern/tern-hover.js"></@script>
 <@script type="text/javascript" src="${page.url.context}/res/fme/components/jsconsole/codemirror/addon/tern/tern-hyperlink.js"></@script>
 
+<!-- dynamic tern definitions for alfresco -->
+<@script type="text/javascript" src="${page.url.context}/res/fme/components/jsconsole/codemirror/addon/tern/defs/alfresco-json-dynamic.js"></@script>
+
 <!-- tern definitions for ecma5 and alfresco-->
 <@script type="text/javascript" src="${page.url.context}/res/fme/components/jsconsole/codemirror/addon/tern/defs/ecma5.json.js"></@script>
 <@script type="text/javascript" src="${page.url.context}/res/fme/components/jsconsole/codemirror/addon/tern/defs/alfresco-json.js"></@script>

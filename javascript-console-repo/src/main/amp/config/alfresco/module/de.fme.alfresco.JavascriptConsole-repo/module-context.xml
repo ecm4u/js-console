@@ -44,6 +44,28 @@
 		</property>
 	</bean>
 
+    <bean id="webscript.de.fme.jsconsole.tern.alfresco-script-api.get" class="de.fme.jsconsole.AlfrescoScriptAPITernGet" parent="webscript">
+        <property name="namespaceService" ref="NamespaceService" />
+        <property name="dictionaryService" ref="DictionaryService" />
+        <property name="scriptService" ref="ScriptService" />
+        <property name="personService" ref="PersonService" />
+        <property name="serviceRegistry" ref="ServiceRegistry" />
+        <property name="scriptProcessor" ref="javaScriptProcessor" />
+        <property name="properties">
+            <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+                <property name="locations">
+                    <list>
+                        <value>classpath*:alfresco/module/*/javascript-console-tern.properties</value>
+                        <value>classpath*:alfresco/extension/javascript-console-tern.properties</value>
+                    </list>
+                </property>
+                <property name="propertiesPersister">
+                    <bean class="org.alfresco.config.AlfrescoPropertiesPersister"/>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
     <!-- Version-aware cache for asynchronous print output retrieval - cluster support only on Alfresco 4.2+ -->
     <bean id="jconsole.printOutputCache" class="de.fme.jsconsole.VersionAwareCacheFactoryBean">
         <property name="cacheName" value="cache.jsConsoleOutput" />
