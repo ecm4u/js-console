@@ -876,29 +876,60 @@ public class AlfrescoScriptAPITernGet extends DeclarativeWebScript implements In
         else if (type.isArray())
         {
             type = type.getComponentType();
-            if (PRIMITIVE_NUMBER_CLASSES.contains(type) || Number.class.isAssignableFrom(type))
+            if (type.isArray())
             {
-                type = Number.class;
-            }
-            else if (boolean.class.equals(type))
-            {
-                type = Boolean.class;
-            }
-            else if (char.class.equals(type))
-            {
-                type = Character.class;
-            }
-            else if (Date.class.isAssignableFrom(type))
-            {
-                type = Date.class;
-            }
-            else if (CharSequence.class.equals(type))
-            {
-                type = String.class;
+                type = type.getComponentType();
+                if (PRIMITIVE_NUMBER_CLASSES.contains(type) || Number.class.isAssignableFrom(type))
+                {
+                    type = Number.class;
+                }
+                else if (boolean.class.equals(type))
+                {
+                    type = Boolean.class;
+                }
+                else if (char.class.equals(type))
+                {
+                    type = Character.class;
+                }
+                else if (Date.class.isAssignableFrom(type))
+                {
+                    type = Date.class;
+                }
+                else if (CharSequence.class.equals(type))
+                {
+                    type = String.class;
+                }
+                else
+                {
+                    relatedClasses.add(type);
+                }
             }
             else
             {
-                relatedClasses.add(type);
+	            if (PRIMITIVE_NUMBER_CLASSES.contains(type) || Number.class.isAssignableFrom(type))
+	            {
+	                type = Number.class;
+	            }
+	            else if (boolean.class.equals(type))
+	            {
+	                type = Boolean.class;
+	            }
+	            else if (char.class.equals(type))
+	            {
+	                type = Character.class;
+	            }
+	            else if (Date.class.isAssignableFrom(type))
+	            {
+	                type = Date.class;
+	            }
+	            else if (CharSequence.class.equals(type))
+	            {
+	                type = String.class;
+	            }
+	            else
+	            {
+	                relatedClasses.add(type);
+	            }
             }
         }
         else if (Map.class.isAssignableFrom(type) && !Scriptable.class.isAssignableFrom(type))
