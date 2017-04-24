@@ -1,1 +1,0 @@
-// NO-OP - only here so Java web script is able to resolve a ScriptDetails

@@ -7,7 +7,7 @@
     <packaging>amp</packaging>
 
     <parent>
-        <groupId>de.ecm4u.fmaul</groupId>
+        <groupId>de.fmaul</groupId>
         <artifactId>javascript-console</artifactId>
         <version>0.7-SNAPSHOT</version>
     </parent>
