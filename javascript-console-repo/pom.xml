@@ -9,7 +9,7 @@
     <parent>
         <groupId>de.ecm4u.fmaul</groupId>
         <artifactId>javascript-console</artifactId>
-        <version>0.7.ecm4u.1-SNAPSHOT</version>
+        <version>0.7.ecm4u.1</version>
     </parent>
 
     <developers>
